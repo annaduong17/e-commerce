@@ -1,6 +1,12 @@
+import ProductImages from './ProductImages';
+import ProductDetails from './ProductDetails';
+
 function ProductPage() {
   return(
-    <div>ProductPage</div>
+    <div>
+      <ProductImages />
+      <ProductDetails />
+    </div>
   )
 }
 
