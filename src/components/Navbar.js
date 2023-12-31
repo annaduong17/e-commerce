@@ -9,10 +9,10 @@ function Navbar() {
       <a href="">About</a>
       <a href="">Contact</a>
       <a href="">
-        <img src="/images/image-avatar.png" alt="cart icon" />
+        <img src="/images/icons/icon-cart.svg" alt="cart icon" />
       </a>
       <a href="">
-        <img src="/images/icons/icon-cart.svg" alt="avatar" />
+        <img src="/images/image-avatar.png"alt="avatar" />
       </a>
     </div>
   )
