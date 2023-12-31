@@ -1,6 +1,3 @@
-import Avatar from '../images/image-avatar.png';
-import CartIcon from '../images/icons/icon-cart.svg';
-
 function Navbar() {
   return(
     <div>
@@ -12,10 +9,10 @@ function Navbar() {
       <a href="">About</a>
       <a href="">Contact</a>
       <a href="">
-        <img src={CartIcon} alt="cart icon" />
+        <img src="/images/image-avatar.png" alt="cart icon" />
       </a>
       <a href="">
-        <img src={Avatar} alt="avatar" />
+        <img src="/images/icons/icon-cart.svg" alt="avatar" />
       </a>
     </div>
   )

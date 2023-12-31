@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1, 
+    "name": "Summer Limited Edition Sneakers",
+    "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer",
+    "price": 150.00,
+    "gender": "women",
+    "imageFile": "summer-sneakers.jpg"
+  },
+  {
+    "id": 2, 
+    "name": "Fall Limited Edition Sneakers",
+    "description": "Next-level water protection inside and out keeps feet warm, dry, and stable so you can weather any weather.",
+    "price": 250.00,
+    "gender": "men",
+    "imageFile": "fall-sneakers.jpg"
+  },
+  {
+    "id": 3, 
+    "name": "Winter Limited Edition Boots",
+    "description": "Best of both worlds. The comfort of a sneaker with the protection of a boot. Made with suede leather and 100g insulation, this boot is not only stylish but also waterproof and ultra comfortable.",
+    "price": 225.00,
+    "gender": "men",
+    "imageFile": "winter-boots.jpg"
+  },
+  {
+    "id": 4, 
+    "name": "Spring Limited Edition Sandals",
+    "description": "Functional yet feminine, the slip-on style supports busy feet with a targeted Contour Cushion footbed while intricate, laser-cut leather straps bring femininity to every outing.",
+    "price": 125.00,
+    "gender": "women",
+    "imageFile": "spring-sandals.jpg"
+  }
+]
