@@ -6,12 +6,14 @@ function ProductDetails({ name, description, price, discount }) {
 
   return(
     <div className='details'>
-      <p>SNEAKER COMPANY</p>
-      <h1>{name}</h1>
-      <p>{description}</p>
-      <p>{discountedPrice}</p>
-      <span>{discount}%</span>
-      <p>{price}</p>
+      <p className='brand'>SNEAKER COMPANY</p>
+      <h1 className='name'>{name}</h1>
+      <p className='description'>{description}</p>
+      <div className='price-discount-container'>
+        <span className='discounted-price'>${discountedPrice}.00</span>
+        <span className='discount'>{discount}%</span>
+      </div>
+      <p className='price'>${price}.00</p>
       <ProductQuantity />
       <Button>Add to cart</Button>
     </div>

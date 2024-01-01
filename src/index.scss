@@ -79,8 +79,8 @@ body {
 
   .images {
     border: 1px solid blue;
-    width: 35%;
-    padding: 60px 30px;
+    width: 40%;
+    padding: 60px 40px;
 
     img {
       width: 100%;
@@ -104,14 +104,63 @@ body {
         border-radius: 10%;
       }
     }
-    
-    
-
-
   }
 
   .details {
-    width: 50%;
+    width: 60%;
+    padding-block: 60px;
+    padding-inline: 30px 0;
+
+    .brand {
+      color: $orange;
+      font-weight: 700;
+      font-size: 1vw;
+      letter-spacing: 1px;
+    }
+
+    .name {
+      color: $black;
+      font-size: 3vw;
+      margin-block: 0 2.5vw;
+    }
+
+    .description {
+      color: $dark-gray-blue;
+      font-size: 1.25vw;
+      line-height: 2vw;
+      letter-spacing: 0.02vw;
+    }
+
+    .price-discount-container {
+      display: flex;
+      align-items: center;
+      margin-top: 2vw;
+
+      .discounted-price {
+        color: $black;
+        font-size: 1.75vw;
+        font-weight: 700;
+        letter-spacing: 0.15vw;
+      }
+  
+      .discount {
+        color: $orange;
+        background-color: $pale-orange;
+        font-size: 1.1vw;
+        font-weight: 700;
+        padding: 2px 5px;
+        margin-left: 1vw;
+        border-radius: 10%;
+      }
+    }
+
+    .price {
+      color: $gray-blue;
+      font-size: 1.25vw;
+      font-weight: 700;
+      text-decoration: line-through;
+      margin-block: 0.75vw 2vw;
+    }
   }
 }
 
