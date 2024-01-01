@@ -4,7 +4,7 @@ import ProductDetails from './ProductDetails';
 function Product({ imgUrl, name, description, price, discount }) {
 
   return(
-    <div>
+    <div className='product-container'>
       <ProductImages imgUrl={imgUrl} name={name}/>
       <ProductDetails 
         name={name}

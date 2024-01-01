@@ -5,7 +5,7 @@ function ProductDetails({ name, description, price, discount }) {
   const discountedPrice = price * (discount/100);
 
   return(
-    <div>
+    <div className='details'>
       <p>SNEAKER COMPANY</p>
       <h1>{name}</h1>
       <p>{description}</p>

@@ -73,5 +73,47 @@ body {
   }
 }
 
+.product-container {
+  border: 1px solid green;
+  display: flex;
+
+  .images {
+    border: 1px solid blue;
+    width: 35%;
+    padding: 60px 30px;
+
+    img {
+      width: 100%;
+    }
+
+    .main-img-container {
+      img {
+        border-radius: 3%;
+      }
+    }
+
+    .thumbnail-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-block: 20px;
+
+      .thumbnail {
+        width: 20%;
+        margin: 5px;
+        border-radius: 10%;
+      }
+    }
+    
+    
+
+
+  }
+
+  .details {
+    width: 50%;
+  }
+}
+
 
 
