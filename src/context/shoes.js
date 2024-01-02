@@ -8,8 +8,8 @@ function Provider({ children }) {
   const [ quantities, setQuantities ] = useState();
   const [ cart, setCart ] = useState([]);
 
-  const handleAddProduct = (name, price, img) => {
-    setCart((prevCart) => [...prevCart, {name, price, img}]
+  const handleAddProduct = (id, name, price, img) => {
+    setCart((prevCart) => [...prevCart, {id, name, price, img, quantity: quantities[id]}]
     )
   }
 
@@ -23,7 +23,6 @@ function Provider({ children }) {
   const initializeQuantities = useCallback(() => {
     const initialQuantities = {};
     for (const product of products) {
-      console.log(product.id);
       initialQuantities[product.id] = 0;
     };
     setQuantities(initialQuantities);
