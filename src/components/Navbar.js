@@ -9,22 +9,22 @@ function Navbar() {
         </NavLink>
       </div>
 
-      <ul className='navlinks'>
+      <ul className="navlinks">
         <div className='navlinks--left'>
           <li className='navlink'>
-            <NavLink to="/">Collections</NavLink>
+            <NavLink to="/" className={({isActive}) => isActive ? "nav-active" : ""}>Collections</NavLink>
           </li>
           <li className='navlink'>
-            <NavLink to="/men">Men</NavLink>
+            <NavLink to="/men" className={({isActive}) => isActive ? "nav-active" : ""}>Men</NavLink>
           </li>
           <li className='navlink'>
-            <NavLink to="/women">Women</NavLink>
+            <NavLink to="/women" className={({isActive}) => isActive ? "nav-active" : ""}>Women</NavLink>
           </li>
           <li className='navlink'>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about" className={({isActive}) => isActive ? "nav-active" : ""}>About</NavLink>
           </li>
           <li className='navlink'>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact" className={({isActive}) => isActive ? "nav-active" : ""}>Contact</NavLink>
           </li>
         </div>
         <div className='navlinks--right'>

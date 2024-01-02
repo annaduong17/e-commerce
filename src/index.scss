@@ -74,13 +74,18 @@ button {
       display: flex;
     }
 
+    .navlinks--left .nav-active {
+      border-bottom: 3px solid $orange;
+      padding-bottom: 20px;
+    }
+
     .navlinks--right {
       align-items: center;
     }
 
     .navlink * {
       text-decoration: none;
-      padding-inline: 10px;
+      margin-inline: 10px;
       color: $dark-gray-blue;
     }
 
