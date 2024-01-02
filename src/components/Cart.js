@@ -6,13 +6,7 @@ import ShoesContext from '../context/shoes';
 function Cart() {
   const { cart } = useContext(ShoesContext);
 
-  const filteredItems = cart.filter(product => {
-    return product.name;
-  })
-
-  console.log(filteredItems);
-
-  const renderedItems = filteredItems.map((product, index) => {
+  const renderedItems = cart.map((product, index) => {
 
     return(
       <CartItem key={index} name={product.name} price={product.price} imgUrl={product.img} />
