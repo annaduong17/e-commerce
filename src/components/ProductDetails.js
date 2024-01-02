@@ -14,8 +14,10 @@ function ProductDetails({ name, description, price, discount }) {
         <span className='discount'>{discount}%</span>
       </div>
       <p className='price'>${price}.00</p>
-      <ProductQuantity />
-      <Button>Add to cart</Button>
+      <div className='add-quantity-container'>
+        <ProductQuantity />
+        <Button img={'/images/icons/icon-cart-white.svg'}className="orange-btn">Add to cart</Button>
+      </div>
     </div>
   )
 }

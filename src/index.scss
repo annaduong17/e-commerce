@@ -17,6 +17,10 @@ body {
   font-family: 'Kumbh Sans', sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 .app {
   border: 1px solid red;
   margin-inline: 100px;
@@ -78,9 +82,11 @@ body {
   display: flex;
 
   .images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid blue;
-    width: 40%;
-    padding: 60px 40px;
+    width: 50%;
 
     img {
       width: 100%;
@@ -96,12 +102,20 @@ body {
       display: flex;
       justify-content: space-between;
       width: 100%;
-      margin-block: 20px;
+      margin-top: 1.5vw;
 
       .thumbnail {
         width: 20%;
-        margin: 5px;
+        margin: 2%;
         border-radius: 10%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
       }
     }
   }
@@ -109,7 +123,7 @@ body {
   .details {
     width: 60%;
     padding-block: 60px;
-    padding-inline: 30px 0;
+    padding-inline: 50px 0;
 
     .brand {
       color: $orange;
@@ -166,9 +180,10 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 13vw;
+      width: 40%;
       height: 5vw;
       padding-inline: 1vw;
+      margin-right: 5%;
       background-color: $light-gray-blue;
       border-radius: 0.5vw;
       
@@ -181,6 +196,34 @@ body {
 
       img {
         width: 1.25vw;
+      }
+    }
+
+    .add-quantity-container {
+      display:flex;
+      justify-content: space-between;
+      margin-top: 4vw;
+
+      .orange-btn {
+        color: $white;
+        background-color: $orange;
+        border: none;
+        border-radius: 0.75vw;
+        width: 25vw;
+        font-size: 1.4vw;
+        font-weight: 700;
+        letter-spacing: 0.05vw;
+
+        &:hover {
+          box-shadow: 1px 10px 25px -5px $orange;
+          opacity: 60%;
+        }
+      }
+
+      .cart-icon {
+        color: $white;
+        width: 7%;
+        margin-right: 6%;
       }
     }
   }
