@@ -8,7 +8,9 @@ function CartItem({ name, price, imgUrl, discount, quantity }) {
         <p>{name}</p>
         <p>{discountedPrice} x {quantity} {discountedPrice * quantity}</p>
       </div>
-      <img src="/images/icons/icon-delete.svg" alt="delete icon" />
+      <button>
+        <img src="/images/icons/icon-delete.svg" alt="delete icon" />
+      </button>
     </div>
   )
 }

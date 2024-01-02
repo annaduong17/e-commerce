@@ -1,5 +1,5 @@
 import Data from '../data/data.json';
-import Product from './Products';
+import Product from './Product';
 
 function Women() {
   const womenShoes = Data.filter(item => {
