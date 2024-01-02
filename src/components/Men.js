@@ -10,6 +10,7 @@ function Men() {
     return(
       <Product 
         key={item.id}
+        className="product-container"
         imgUrl={`/images/products/${item.imageFile}`}
         name={item.name}
         description={item.description}
@@ -21,7 +22,9 @@ function Men() {
 
   console.log(renderedItems);
   return(
-    <div>{renderedItems}</div>
+    <div className='products-container'>
+      {renderedItems}
+    </div>
   )
 }
 

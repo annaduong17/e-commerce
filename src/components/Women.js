@@ -10,6 +10,7 @@ function Women() {
     return(
       <Product 
         key={item.id}
+        className="product-container"
         imgUrl={`/images/products/${item.imageFile}`}
         name={item.name}
         description={item.description}
@@ -20,7 +21,9 @@ function Women() {
   })
 
   return(
-    <div>{renderedItems}</div>
+    <div className='products-container'>
+      {renderedItems}
+    </div>
   )
 }
 
