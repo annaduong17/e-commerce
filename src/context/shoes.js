@@ -15,17 +15,20 @@ function Provider({ children }) {
     )
   }
 
+
+
   const value = {
     products, 
     quantities,
     selectedQuantity,
     cart,
-    handleAddProduct
+    handleAddProduct,
+    discount: 50
   }
 
   useEffect(() => {
     setProducts(Data);
-  }, []);
+  }, [products]);
 
   return(
     <ShoesContext.Provider value={value}>

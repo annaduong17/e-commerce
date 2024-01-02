@@ -4,12 +4,12 @@ import Button from './Button';
 import ShoesContext from '../context/shoes';
 
 function Cart() {
-  const { cart } = useContext(ShoesContext);
+  const { cart, discount } = useContext(ShoesContext);
 
   const renderedItems = cart.map((product, index) => {
-
+    console.log(product);
     return(
-      <CartItem key={index} name={product.name} price={product.price} imgUrl={product.img} />
+      <CartItem key={index} name={product.name} price={product.price} imgUrl={product.img} discount={discount} />
     )
   })
 
