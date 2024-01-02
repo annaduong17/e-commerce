@@ -1,17 +1,11 @@
 import ProductImages from './ProductImages';
 import ProductDetails from './ProductDetails';
 
-function Product({ imgUrl, name, description, price, discount }) {
-
+function Product({ name, price, description, gender, discount, imgUrl, handleAddProduct, className }) {
   return(
-    <div className='product-container'>
-      <ProductImages imgUrl={imgUrl} name={name}/>
-      <ProductDetails 
-        name={name}
-        description={description}
-        price={price}
-        discount={discount}
-      />
+    <div className={className}>
+      <ProductImages imgUrl={imgUrl} name={name} />
+      <ProductDetails handleAddProduct={handleAddProduct} name={name} price={price} description={description} discount={discount} gender={gender} imgUrl={imgUrl} />
     </div>
   )
 }

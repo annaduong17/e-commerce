@@ -21,6 +21,23 @@ button {
   cursor: pointer;
 }
 
+.orange-btn {
+  color: $white;
+  background-color: $orange;
+  border: none;
+  border-radius: 0.75vw;
+  width: 25vw;
+  height: 5vw;
+  font-size: 1.4vw;
+  font-weight: 700;
+  letter-spacing: 0.05vw;
+
+  &:hover {
+    box-shadow: 1px 10px 25px -5px $orange;
+    opacity: 60%;
+  }
+}
+
 .app {
   border: 1px solid red;
   margin-inline: 100px;
@@ -85,9 +102,14 @@ button {
   }
 }
 
-.product-container {
+.products-container {
   border: 1px solid green;
-  display: flex;
+
+  .product-container {
+    border: 1px solid pink;
+    display: flex;
+    margin: 2vw;
+  }
 
   .images {
     display: flex;
@@ -212,22 +234,6 @@ button {
       justify-content: space-between;
       margin-top: 4vw;
 
-      .orange-btn {
-        color: $white;
-        background-color: $orange;
-        border: none;
-        border-radius: 0.75vw;
-        width: 25vw;
-        font-size: 1.4vw;
-        font-weight: 700;
-        letter-spacing: 0.05vw;
-
-        &:hover {
-          box-shadow: 1px 10px 25px -5px $orange;
-          opacity: 60%;
-        }
-      }
-
       .cart-icon {
         color: $white;
         width: 7%;
@@ -236,6 +242,17 @@ button {
     }
   }
 }
+
+.cart-item {
+  display: flex;
+  align-items: center;
+
+  img.cart-size {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 
 
 

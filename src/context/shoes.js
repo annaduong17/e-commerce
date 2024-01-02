@@ -1,23 +1,31 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import Data from '../data/data.json';
 
 const ShoesContext = createContext();
 
 function Provider({ children }) {
-  const [ quantity, setQuantity ] = useState(0);
+  const [ products, setProducts ] = useState([]);
+  const [ quantities, setQuantities ] = useState({id: '', quantity: 0});
 
-  const addQuantity = (e) => {
-    setQuantity(prev => prev + 1);
-  }
+  const [ selectedQuantity, setSelectedQuantity ] = useState(1);
+  const [ cart, setCart ] = useState([]);
 
-  const subtractQuantity = (e) => {
-    setQuantity(prev => prev - 1);
+  const handleAddProduct = (name, price, img) => {
+    setCart((prevCart) => [...prevCart, {name, price, img}]
+    )
   }
 
   const value = {
-    quantity,
-    addQuantity,
-    subtractQuantity,
+    products, 
+    quantities,
+    selectedQuantity,
+    cart,
+    handleAddProduct
   }
+
+  useEffect(() => {
+    setProducts(Data);
+  }, []);
 
   return(
     <ShoesContext.Provider value={value}>

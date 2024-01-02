@@ -1,7 +1,7 @@
 import ProductQuantity from './ProductQuantity';
 import Button from './Button';
 
-function ProductDetails({ name, description, price, discount }) {
+function ProductDetails({ name, description, price, discount, imgUrl, handleAddProduct }) {
   const discountedPrice = price * (discount/100);
 
   return(
@@ -16,7 +16,7 @@ function ProductDetails({ name, description, price, discount }) {
       <p className='price'>${price}.00</p>
       <div className='add-quantity-container'>
         <ProductQuantity />
-        <Button img={'/images/icons/icon-cart-white.svg'}className="orange-btn">Add to cart</Button>
+        <Button onClick={() => handleAddProduct(name, price, imgUrl)} img={'/images/icons/icon-cart-white.svg'}className="orange-btn">Add to cart</Button>
       </div>
     </div>
   )
