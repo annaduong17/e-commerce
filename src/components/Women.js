@@ -1,21 +1,26 @@
+import { useContext } from 'react';
+import ShoesContext from '../context/shoes';
 import Data from '../data/data.json';
 import Product from './Product';
 
 function Women() {
-  const womenShoes = Data.filter(item => {
-    return item.gender === 'women';
+  const { handleAddProduct } = useContext(ShoesContext);
+
+  const womenShoes = Data.filter(product => {
+    return product.gender === 'women';
   });
 
-  const renderedItems = womenShoes.map(item => {
+  const renderedItems = womenShoes.map(product => {
     return(
       <Product 
-        key={item.id}
+        id={product.id}
         className="product-container"
-        imgUrl={`/images/products/${item.imageFile}`}
-        name={item.name}
-        description={item.description}
-        price={item.price}
+        imgUrl={`/images/products/${product.imageFile}`}
+        name={product.name}
+        description={product.description}
+        price={product.price}
         discount={50}
+        handleAddProduct={handleAddProduct}
       />
     )
   })
