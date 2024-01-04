@@ -9,7 +9,7 @@ function Cart() {
   const renderedItems = cart.map((product) => {
     
     return(
-      <CartItem id={product.id} name={product.name} price={product.price} imgUrl={product.img} discount={discount} quantity={quantities[product.id]} />
+      <CartItem key={product.id} id={product.id} name={product.name} price={product.price} imgUrl={product.img} discount={discount} quantity={quantities[product.id]} />
     )
   })
 

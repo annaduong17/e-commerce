@@ -12,6 +12,7 @@ if (!products) {
 const renderedItems = products.map(product => {
   return(
     <Product 
+      key={product.id}
       id={product.id} 
       className="product-container"
       name={product.name}
