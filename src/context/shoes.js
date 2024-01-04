@@ -8,6 +8,14 @@ function Provider({ children }) {
   const [ quantities, setQuantities ] = useState();
   const [ cart, setCart ] = useState([]);
 
+  const handleDeleteProduct = (id) => {
+    const updatedCart = cart.filter(product => {
+      return product.id !== id;
+    });
+
+    setCart(updatedCart);
+  }
+
   const handleAddProduct = (id, name, price, img) => {
     
     setCart(prevCart => {
@@ -49,6 +57,7 @@ function Provider({ children }) {
     for (const product of products) {
       initialQuantities[product.id] = 0;
     };
+    
     setQuantities(initialQuantities);
   }, [products]);
 
@@ -58,6 +67,7 @@ function Provider({ children }) {
     handleQuantityChange,
     cart,
     handleAddProduct,
+    handleDeleteProduct,
     discount: 50
   }
 

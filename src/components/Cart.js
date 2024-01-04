@@ -20,8 +20,6 @@ function Cart() {
     return acc;
   }, 0)
   
-  console.log(numOfItems);
-  
   const renderedItems = cart.map((product) => {
     
     return(

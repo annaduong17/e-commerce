@@ -1,4 +1,9 @@
-function CartItem({ name, price, imgUrl, discount, cartQuantity }) {
+import { useContext } from 'react';
+import ShoesContext from '../context/shoes';
+
+function CartItem({ id, name, price, imgUrl, discount, cartQuantity }) {
+
+  const { handleDeleteProduct } = useContext(ShoesContext);
   
   const discountedPrice = price * discount / 100;
   
@@ -9,7 +14,8 @@ function CartItem({ name, price, imgUrl, discount, cartQuantity }) {
         <p>{name}</p>
         <p>{discountedPrice} x {cartQuantity} {discountedPrice * cartQuantity}</p>
       </div>
-      <button>
+      <button>Edit</button>
+      <button onClick={() => handleDeleteProduct(id)}>
         <img src="/images/icons/icon-delete.svg" alt="delete icon" />
       </button>
     </div>
