@@ -17,6 +17,9 @@ function Provider({ children }) {
   }
 
   const handleAddProduct = (id, name, price, img) => {
+    if (quantities[id] === 0) {
+      return;
+    }
     
     setCart(prevCart => {
       const existingProductIndex = prevCart.findIndex(product => product.id === id);
@@ -57,7 +60,7 @@ function Provider({ children }) {
     for (const product of products) {
       initialQuantities[product.id] = 0;
     };
-    
+
     setQuantities(initialQuantities);
   }, [products]);
 
