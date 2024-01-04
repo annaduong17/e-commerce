@@ -1,5 +1,3 @@
-
-
 function CartItem({ name, price, imgUrl, discount, cartQuantity }) {
   
   const discountedPrice = price * discount / 100;

@@ -25,7 +25,7 @@ function Provider({ children }) {
             name, 
             price, 
             img,
-            cartQuantity: (prevCart[id] || 0) 
+            cartQuantity: quantities[id]
           }
         ];
       }
