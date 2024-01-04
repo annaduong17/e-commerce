@@ -17,7 +17,7 @@ function ProductQuantity({ id }) {
       <button onClick={handleDecrement} className="minus-btn">
         <img src="/images/icons/icon-minus.svg" alt="minus icon" />
       </button>
-      <input value={quantities[id]} />
+      <span>{quantities[id]}</span>
       <button onClick={handleIncrement} className="plus-btn">
         <img src="/images/icons/icon-plus.svg" alt="plus icon" />
       </button>
