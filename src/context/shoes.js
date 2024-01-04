@@ -9,8 +9,34 @@ function Provider({ children }) {
   const [ cart, setCart ] = useState([]);
 
   const handleAddProduct = (id, name, price, img) => {
-    setCart((prevCart) => [...prevCart, {id, name, price, img, quantity: quantities[id]}]
-    )
+    
+    setCart(prevCart => {
+      const existingProductIndex = prevCart.findIndex(product => product.id === id);
+    
+      if (existingProductIndex !== -1) {
+        const updatedCart = [...prevCart];
+        updatedCart[existingProductIndex].cartQuantity += quantities[id] || 1;
+    
+        return updatedCart;
+      } else {
+        return [...prevCart, 
+          { 
+            id, 
+            name, 
+            price, 
+            img,
+            cartQuantity: (prevCart[id] || 0) 
+          }
+        ];
+      }
+    });
+
+    setQuantities((prev) => ({
+      ...prev,
+      [id]: (prev[id] || 0) + quantities[id] || 1,
+    }));  
+
+    initializeQuantities();
   }
 
   const handleQuantityChange = (key, newQuantity) => {

@@ -221,6 +221,10 @@ button {
       margin-right: 5%;
       background-color: $light-gray-blue;
       border-radius: 0.5vw;
+
+      input {
+        width: 40%;
+      }
       
       * {
         background: transparent;

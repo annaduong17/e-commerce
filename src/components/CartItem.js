@@ -1,4 +1,7 @@
-function CartItem({ name, price, imgUrl, discount, quantity }) {
+
+
+function CartItem({ name, price, imgUrl, discount, cartQuantity }) {
+  
   const discountedPrice = price * discount / 100;
   
   return(
@@ -6,7 +9,7 @@ function CartItem({ name, price, imgUrl, discount, quantity }) {
       <img className="cart-size" src={imgUrl} alt="shoes" />
       <div>
         <p>{name}</p>
-        <p>{discountedPrice} x {quantity} {discountedPrice * quantity}</p>
+        <p>{discountedPrice} x {cartQuantity} {discountedPrice * cartQuantity}</p>
       </div>
       <button>
         <img src="/images/icons/icon-delete.svg" alt="delete icon" />
