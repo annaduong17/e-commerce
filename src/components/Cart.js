@@ -1,10 +1,26 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import CartItem from './CartItem';
 import Button from './Button';
 import ShoesContext from '../context/shoes';
 
 function Cart() {
+  const [ showButton, setShowButton ] = useState(false);
   const { cart, discount } = useContext(ShoesContext);
+
+  useEffect(() => {
+    if (cart.length) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  }, [cart]);
+
+  const numOfItems = cart.reduce((acc, curr) => {
+    acc += curr.cartQuantity;
+    return acc;
+  }, 0)
+  
+  console.log(numOfItems);
   
   const renderedItems = cart.map((product) => {
     
@@ -13,11 +29,12 @@ function Cart() {
     )
   })
 
+
   return(
     <div>
-      <h1>Cart</h1>
+      <h1>Cart {`(${numOfItems})`}</h1>
       {renderedItems}
-      <Button className="orange-btn">Checkout</Button>
+      {showButton && <Button className="orange-btn">Checkout</Button>}
     </div>
   )
 }

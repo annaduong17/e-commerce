@@ -35,8 +35,6 @@ function Provider({ children }) {
       ...prev,
       [id]: (prev[id] || 0) + quantities[id] || 1,
     }));  
-
-    initializeQuantities();
   }
 
   const handleQuantityChange = (key, newQuantity) => {
@@ -69,7 +67,7 @@ function Provider({ children }) {
 
   useEffect(() => {
     initializeQuantities();
-  }, [initializeQuantities]);
+  }, [cart, initializeQuantities]);
 
 
   return(
