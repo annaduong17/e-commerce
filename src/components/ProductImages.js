@@ -5,13 +5,14 @@ function ProductImages({ id, imgUrls, name }) {
   const [ selectedIndex, setSelectedIndex ] = useState(0);
   const { handleModal } = useContext(ShoesContext);
 
-  const handleClick = (index) => {
+  const handleClick = (event, index) => {
+    event.stopPropagation();
     setSelectedIndex(index);
   };
 
   const renderedThumbnails = imgUrls.map((url, index) => {
     return(
-      <img key={index} onClick={() => handleClick(index)} src={`/images/products/${url}`} alt={name}/>
+      <img key={index} onClick={(event) => handleClick(event, index)} src={`/images/products/${url}`} alt={name}/>
     );
   })
 

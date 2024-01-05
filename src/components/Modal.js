@@ -10,7 +10,8 @@ function Modal({ id, imgUrls, name }) {
       <button onClick={() => handleModal(id)}>X</button>
       <ProductImages id={id} imgUrls={imgUrls} name={name}/>
     </div>
-  )
+    )
+
 }
 
 export default Modal;
