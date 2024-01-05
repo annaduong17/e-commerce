@@ -7,7 +7,11 @@ function Provider({ children }) {
   const [ products, setProducts ] = useState([]);
   const [ quantities, setQuantities ] = useState();
   const [ cart, setCart ] = useState([]);
-  const [ showModal, setShowModal ] = useState(false);
+  const [ showModals, setShowModals ] = useState();
+
+  const handleModal = (id) => {
+    setShowModals({...showModals, [id]: !showModals[id]});
+  };
 
   const handleDeleteProduct = (id) => {
     const updatedCart = cart.filter(product => {
@@ -65,6 +69,15 @@ function Provider({ children }) {
     setQuantities(initialQuantities);
   }, [products]);
 
+  const initializeModals = useCallback(() => {
+    const initialModals = {};
+    for (const product of products) {
+      initialModals[product.id] = false;
+    };
+
+    setShowModals(initialModals);
+  }, [products]);
+
   const value = {
     products, 
     quantities,
@@ -72,6 +85,8 @@ function Provider({ children }) {
     cart,
     handleAddProduct,
     handleDeleteProduct,
+    handleModal,
+    showModals,
     discount: 50
   }
 
@@ -82,6 +97,10 @@ function Provider({ children }) {
   useEffect(() => {
     initializeQuantities();
   }, [cart, initializeQuantities]);
+
+  useEffect(() => {
+    initializeModals();
+  }, [initializeModals])
 
 
   return(

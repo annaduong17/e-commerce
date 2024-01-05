@@ -15,7 +15,7 @@ function Women() {
       <Product 
         id={product.id}
         className="product-container"
-        imgUrl={`/images/products/${product.imageFile}`}
+        imgUrls={product.imageFiles}
         name={product.name}
         description={product.description}
         price={product.price}

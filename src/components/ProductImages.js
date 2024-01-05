@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import ShoesContext from '../context/shoes';
 
-function ProductImages({ imgUrls, name }) {
+function ProductImages({ id, imgUrls, name }) {
   const [ selectedIndex, setSelectedIndex ] = useState(0);
+  const { handleModal } = useContext(ShoesContext);
 
   const handleClick = (index) => {
     setSelectedIndex(index);
@@ -16,7 +18,7 @@ function ProductImages({ imgUrls, name }) {
 
   return(
     <div className="images">
-      <div className="main-img-container">
+      <div onClick={() => handleModal(id)} className="main-img-container">
         {renderedThumbnails[selectedIndex]}
       </div>
       <div className="thumbnail-container">
