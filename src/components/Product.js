@@ -11,7 +11,9 @@ function Product({ id, name, price, description, gender, discount, imgUrls, hand
 
   return(
     <div className={className}>
-     {showModals[id] && <Modal id={id} imgUrls={imgUrls} name={name}/>}
+     
+      {showModals[id] && <div className="modal-container"><Modal className="modal" id={id} imgUrls={imgUrls} name={name}/></div>}
+     
       <ProductImages id={id} imgUrls={imgUrls} name={name} />
       <ProductDetails id={id} handleAddProduct={handleAddProduct} name={name} price={price} description={description} discount={discount} gender={gender} imgUrls={imgUrls} />
     </div>
