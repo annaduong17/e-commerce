@@ -11,7 +11,7 @@ function ProductImages({ id, imgUrls, name }) {
 
   const renderedThumbnails = imgUrls.map((url, index) => {
     return(
-      <img key={index} onClick={() => handleClick(index)} className='thumbnail' src={`/images/products/${url}`} alt={name}/>
+      <img key={index} onClick={() => handleClick(index)} src={`/images/products/${url}`} alt={name}/>
     );
   })
 
