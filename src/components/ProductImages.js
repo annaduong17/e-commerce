@@ -1,14 +1,10 @@
 import { useState } from 'react';
 
 function ProductImages({ imgUrls, name }) {
-  const [ selectedIndex, setSelectedIndex ] = useState(-1);
+  const [ selectedIndex, setSelectedIndex ] = useState(0);
 
   const handleClick = (index) => {
-    if (selectedIndex === index) {
-      setSelectedIndex(-1);
-    } else {
-      setSelectedIndex(index);
-    }
+    setSelectedIndex(index);
   };
 
   const renderedThumbnails = imgUrls.map((url, index) => {
@@ -21,7 +17,7 @@ function ProductImages({ imgUrls, name }) {
   return(
     <div className="images">
       <div className="main-img-container">
-        {renderedThumbnails[0]}
+        {renderedThumbnails[selectedIndex]}
       </div>
       <div className="thumbnail-container">
         {renderedThumbnails}
