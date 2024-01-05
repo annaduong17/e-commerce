@@ -1,6 +1,10 @@
 function Modal() {
   return(
-    <div>Modal</div>
+    <div>
+      <button>Previous</button>
+      <ProductImages imgUrl=imgUrl/>
+      <button>Next</button>
+    </div>
   )
 }
 

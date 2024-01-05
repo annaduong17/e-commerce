@@ -1,15 +1,30 @@
-function ProductImages({ imgUrl, name }) {
+import { useState } from 'react';
+
+function ProductImages({ imgUrls, name }) {
+  const [ selectedIndex, setSelectedIndex ] = useState(-1);
+
+  const handleClick = (index) => {
+    if (selectedIndex === index) {
+      setSelectedIndex(-1);
+    } else {
+      setSelectedIndex(index);
+    }
+  };
+
+  const renderedThumbnails = imgUrls.map((url, index) => {
+    return(
+      <img key={index} onClick={() => handleClick(index)} className='thumbnail' src={`/images/products/${url}`} alt={name}/>
+    );
+  })
+
 
   return(
     <div className="images">
       <div className="main-img-container">
-        <img className="main-img" src={imgUrl} alt={name} />
+        {renderedThumbnails[0]}
       </div>
       <div className="thumbnail-container">
-        <img className="thumbnail" src={imgUrl} alt={name} />
-        <img className="thumbnail" src={imgUrl} alt={name} />
-        <img className="thumbnail" src={imgUrl} alt={name} />
-        <img className="thumbnail" src={imgUrl} alt={name} />
+        {renderedThumbnails}
       </div>
     </div>
   )

@@ -9,7 +9,7 @@ function CartItem({ id, name, price, imgUrl, discount, cartQuantity }) {
   
   return(
     <div className="cart-item">
-      <img className="cart-size" src={imgUrl} alt="shoes" />
+      <img className="cart-size" src={`/images/products/${imgUrl}`} alt="shoes" />
       <div>
         <p>{name}</p>
         <p>{discountedPrice} x {cartQuantity} {discountedPrice * cartQuantity}</p>

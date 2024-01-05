@@ -5,7 +5,12 @@
     "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
     "price": 150.00,
     "gender": "women",
-    "imageFile": "summer-sneakers.jpg"
+    "imageFiles": [
+      "summer-sneakers-thumbnail-1.jpg",
+      "summer-sneakers-thumbnail-2.jpg",
+      "summer-sneakers-thumbnail-3.jpg",
+      "summer-sneakers-thumbnail-4.jpg"
+    ]
   },
   {
     "id": 2, 
@@ -13,7 +18,12 @@
     "description": "Next-level water protection inside and out keeps feet warm, dry, and stable so you can weather any weather.",
     "price": 250.00,
     "gender": "men",
-    "imageFile": "fall-sneakers.jpg"
+    "imageFiles": [
+      "fall-sneakers.jpg",
+      "fall-sneakers.jpg",
+      "fall-sneakers.jpg",
+      "fall-sneakers.jpg"
+    ]
   },
   {
     "id": 3, 
@@ -21,7 +31,12 @@
     "description": "Best of both worlds. The comfort of a sneaker with the protection of a boot. Made with suede leather and 100g insulation, this boot is not only stylish but also waterproof and ultra comfortable.",
     "price": 225.00,
     "gender": "men",
-    "imageFile": "winter-boots.jpg"
+    "imageFiles": [
+      "winter-boots.jpg",
+      "winter-boots.jpg",
+      "winter-boots.jpg",
+      "winter-boots.jpg"
+    ]
   },
   {
     "id": 4, 
@@ -29,6 +44,11 @@
     "description": "Functional yet feminine, the slip-on style supports busy feet with a targeted Contour Cushion footbed while intricate, laser-cut leather straps bring femininity to every outing.",
     "price": 125.00,
     "gender": "women",
-    "imageFile": "spring-sandals.jpg"
+    "imageFiles": [
+      "spring-sandals.jpg",
+      "spring-sandals.jpg",
+      "spring-sandals.jpg",
+      "spring-sandals.jpg"
+    ]
   }
 ]

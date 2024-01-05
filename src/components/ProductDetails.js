@@ -1,7 +1,7 @@
 import ProductQuantity from './ProductQuantity';
 import Button from './Button';
 
-function ProductDetails({ id, name, description, price, discount, imgUrl, handleAddProduct }) {
+function ProductDetails({ id, name, description, price, discount, imgUrls, handleAddProduct }) {
   const discountedPrice = price * (discount/100);
   const isWholeNumber = (number) => {
     return number % 1 === 0;
@@ -19,7 +19,7 @@ function ProductDetails({ id, name, description, price, discount, imgUrl, handle
       <p className='price'>${price}{isWholeNumber(price) && '.00'}</p>
       <div className='add-quantity-container'>
         <ProductQuantity id={id} />
-        <Button id={id} onClick={() => handleAddProduct(id, name, price, imgUrl)} img={'/images/icons/icon-cart-white.svg'}className="orange-btn">Add to cart</Button>
+        <Button id={id} onClick={() => handleAddProduct(id, name, price, imgUrls)} img={'/images/icons/icon-cart-white.svg'}className="orange-btn">Add to cart</Button>
       </div>
     </div>
   )

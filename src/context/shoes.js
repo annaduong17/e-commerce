@@ -7,6 +7,7 @@ function Provider({ children }) {
   const [ products, setProducts ] = useState([]);
   const [ quantities, setQuantities ] = useState();
   const [ cart, setCart ] = useState([]);
+  const [ showModal, setShowModal ] = useState(false);
 
   const handleDeleteProduct = (id) => {
     const updatedCart = cart.filter(product => {
@@ -16,11 +17,11 @@ function Provider({ children }) {
     setCart(updatedCart);
   }
 
-  const handleAddProduct = (id, name, price, img) => {
+  const handleAddProduct = (id, name, price, imgUrls) => {
     if (quantities[id] === 0) {
       return;
     }
-    
+
     setCart(prevCart => {
       const existingProductIndex = prevCart.findIndex(product => product.id === id);
     
@@ -35,7 +36,7 @@ function Provider({ children }) {
             id, 
             name, 
             price, 
-            img,
+            img: imgUrls[0],
             cartQuantity: quantities[id]
           }
         ];

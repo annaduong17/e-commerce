@@ -20,7 +20,7 @@ const renderedItems = products.map(product => {
       description={product.description}
       gender={product.gender}
       discount={50}
-      imgUrl={`/images/products/${product.imageFile}`}
+      imgUrls={product.imageFiles}
       handleAddProduct={handleAddProduct}
     />
   )
