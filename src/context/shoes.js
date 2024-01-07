@@ -29,6 +29,13 @@ function Provider({ children }) {
     });
   }
 
+  const handlePrevious = (event) => {
+    event.stopPropagation();
+    setSelectedIndex(prev => {
+      return prev === 0 ? products.length - 1 : prev - 1;
+    });
+  }
+
   const handleDeleteProduct = (id) => {
     const updatedCart = cart.filter(product => {
       return product.id !== id;
@@ -106,6 +113,7 @@ function Provider({ children }) {
     handleClick,
     selectedIndex,
     handleNext,
+    handlePrevious,
     discount: 50
   }
 
