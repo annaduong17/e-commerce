@@ -1,16 +1,9 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import ShoesContext from '../context/shoes';
 
 function ProductImages({ id, imgUrls, name }) {
-  const [ selectedIndex, setSelectedIndex ] = useState(0);
-  const { handleModal } = useContext(ShoesContext);
-
-  const handleClick = (event, index) => {
-    if (event.target.parentNode.parentNode.parentNode.className === "modal") {
-      event.stopPropagation();
-    }
-      setSelectedIndex(index);
-  };
+  
+  const { handleModal, handleClick, selectedIndex } = useContext(ShoesContext);
 
   const renderedThumbnails = imgUrls.map((url, index) => {
     const isSelected = index === selectedIndex;

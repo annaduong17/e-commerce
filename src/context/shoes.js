@@ -8,10 +8,27 @@ function Provider({ children }) {
   const [ quantities, setQuantities ] = useState();
   const [ cart, setCart ] = useState([]);
   const [ showModals, setShowModals ] = useState();
+  const [ selectedIndex, setSelectedIndex ] = useState(0);
 
   const handleModal = (id) => {
     setShowModals({...showModals, [id]: !showModals[id]});
   };
+
+  const handleClick = (event, index) => {
+    if (event.target.parentNode.parentNode.parentNode.className === "modal") {
+      event.stopPropagation();
+    }
+    
+    setSelectedIndex(index);
+  };
+
+  const handleNext = (event) => {
+    if (event.target.parentNode.parentNode.parentNode.className === "modal") {
+      event.stopPropagation();
+    }
+
+    setSelectedIndex(prev => prev + 1);
+  }
 
   const handleDeleteProduct = (id) => {
     const updatedCart = cart.filter(product => {
@@ -87,6 +104,9 @@ function Provider({ children }) {
     handleDeleteProduct,
     handleModal,
     showModals,
+    handleClick,
+    selectedIndex,
+    handleNext,
     discount: 50
   }
 
