@@ -148,13 +148,18 @@ button {
         margin: 2%;
         border-radius: 10%;
 
-      &:first-child {
+        &:first-child {
         margin-left: 0;
-      }
+        }
 
-      &:last-child {
+        &:last-child {
         margin-right: 0;
-      }
+        }
+
+        &.orange-border {
+          border: 2px solid $orange;
+          opacity: 30%;
+        }
       }
     }
   }

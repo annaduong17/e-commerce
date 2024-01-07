@@ -6,16 +6,26 @@ function ProductImages({ id, imgUrls, name }) {
   const { handleModal } = useContext(ShoesContext);
 
   const handleClick = (event, index) => {
-    event.stopPropagation();
-    setSelectedIndex(index);
+    if (event.target.parentNode.parentNode.parentNode.className === "modal") {
+      event.stopPropagation();
+    }
+      setSelectedIndex(index);
   };
 
   const renderedThumbnails = imgUrls.map((url, index) => {
+    const isSelected = index === selectedIndex;
+
     return(
-      <img key={index} onClick={(event) => handleClick(event, index)} src={`/images/products/${url}`} alt={name}/>
+      <img 
+        key={index} 
+        onClick={(event) => handleClick(event, index)} 
+        src={`/images/products/${url}`} 
+        alt={name}
+        className={isSelected ? "orange-border" : ""}
+      />
+        
     );
   })
-
 
   return(
     <div className="images">
