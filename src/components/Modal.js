@@ -8,7 +8,7 @@ function Modal({ id, imgUrls, name }) {
   return(
     <div className="modal">
       <button onClick={() => handleModal(id)}>X</button>
-      <button >Next</button>
+      <button onClick={handleNext}>Next</button>
       <ProductImages id={id} imgUrls={imgUrls} name={name}/>
     </div>
     )

@@ -23,11 +23,10 @@ function Provider({ children }) {
   };
 
   const handleNext = (event) => {
-    if (event.target.parentNode.parentNode.parentNode.className === "modal") {
-      event.stopPropagation();
-    }
-
-    setSelectedIndex(prev => prev + 1);
+    event.stopPropagation();
+    setSelectedIndex(prev => {
+      return prev === products.length - 1 ? 0 : prev + 1;
+    });
   }
 
   const handleDeleteProduct = (id) => {
