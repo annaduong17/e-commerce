@@ -19,7 +19,7 @@ function Provider({ children }) {
     setShowModals({...showModals, [id]: !showModals[id]});
   };
 
-  const handleClick = (event, index) => {
+  const handleMainImgClick = (event, index) => {
     if (event.target.parentNode.parentNode.parentNode.className === "modal") {
       event.stopPropagation();
     }
@@ -117,7 +117,7 @@ function Provider({ children }) {
     handleDeleteProduct,
     handleModal,
     showModals,
-    handleClick,
+    handleMainImgClick,
     selectedIndex,
     handleNext,
     handlePrevious,

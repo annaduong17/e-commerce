@@ -3,7 +3,7 @@ import ShoesContext from '../context/shoes';
 
 function ProductImages({ id, imgUrls, name }) {
   
-  const { handleModal, handleClick, selectedIndex } = useContext(ShoesContext);
+  const { handleModal, handleMainImgClick, selectedIndex } = useContext(ShoesContext);
 
   const renderedThumbnails = imgUrls.map((url, index) => {
     const isSelected = index === selectedIndex;
@@ -11,7 +11,7 @@ function ProductImages({ id, imgUrls, name }) {
     return(
       <img 
         key={index} 
-        onClick={(event) => handleClick(event, index)} 
+        onClick={(event) => handleMainImgClick(event, index)} 
         src={`/images/products/${url}`} 
         alt={name}
         className={isSelected ? "orange-border" : ""}
