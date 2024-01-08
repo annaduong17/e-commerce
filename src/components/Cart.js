@@ -25,9 +25,13 @@ function Cart() {
 
   return(
     <div className='cart'>
-      <h1>Cart</h1>
-      {renderedItems}
-      {showButton && <Button className="orange-btn checkout">Checkout</Button>}
+      <div>
+        <h1>Cart</h1>
+      </div>
+      <div>
+        {renderedItems}
+        {showButton && <Button className="orange-btn checkout">Checkout</Button>}
+      </div>
     </div>
   )
 }
