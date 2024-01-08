@@ -47,12 +47,15 @@ button {
 
 .navbar {
   // border: 1px solid black;
+  border-bottom: 1px solid $gray-blue;
+  padding: 0;
   display: flex;
   align-items: center;
   position: sticky;
   top: 0;
   background-color: $white;
   z-index: 5;
+  height: 100px;
 
   .logo-container {
     width: 150px;
@@ -72,7 +75,7 @@ button {
     align-items: center;
     font-size: 14px;
     list-style: none;
-    padding: 0;
+    margin: 0;
 
     .navlinks--left,
     .navlinks--right {
@@ -82,7 +85,7 @@ button {
 
     .navlinks--left .nav-active {
       border-bottom: 3px solid $orange;
-      padding-bottom: 20px;
+      padding-bottom: 38px;
     }
 
     .navlinks--right {
@@ -96,6 +99,7 @@ button {
 
     .navlink {
       position: relative;
+      margin-right: 1vw;
 
       span {
         position: absolute;
