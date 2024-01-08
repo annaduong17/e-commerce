@@ -13,15 +13,15 @@ import ShoesContext from '../context/shoes';
 function App() {
   const { showCart, setShowCart } = useContext(ShoesContext);
 
-  useEffect(() => {
-    const hideCart = window.addEventListener('scroll',  () => {
-      setShowCart(false);
-    });
+  // useEffect(() => {
+  //   const hideCart = window.addEventListener('scroll',  () => {
+  //     setShowCart(false);
+  //   });
 
-    return () => {
-      window.removeEventListener('scroll', hideCart);
-    }
-  })
+  //   return () => {
+  //     window.removeEventListener('scroll', hideCart);
+  //   }
+  // })
 
   return(
     <BrowserRouter>

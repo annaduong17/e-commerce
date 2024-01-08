@@ -149,6 +149,7 @@ button {
     flex-direction: column;
     justify-content: center;
     // border: 1px solid blue;
+    width: 50%;
     max-width: 100%;
     max-height: 100%;
     z-index: 0;
@@ -260,7 +261,7 @@ button {
   .details {
     width: 60%;
     padding-block: 60px;
-    padding-inline: 50px 0;
+    padding-inline: 100px 0;
 
     .brand {
       color: $orange;
@@ -354,10 +355,17 @@ button {
   }
 }
 
+.cart-container {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 .cart {
   position: absolute;
-  top: 80px;
-  right: 100px;
+  top: 0;
   width: 330px;
   font-size: 13px;
   color: $dark-gray-blue;

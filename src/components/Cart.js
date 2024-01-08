@@ -24,13 +24,15 @@ function Cart() {
 
 
   return(
-    <div className='cart'>
-      <div>
-        <h1>Cart</h1>
-      </div>
-      <div className='cart-content'>
-        {renderedItems}
-        <Button className="orange-btn checkout">Checkout</Button>
+    <div className='cart-container'>
+      <div className='cart'>
+        <div>
+          <h1>Cart</h1>
+        </div>
+        <div className='cart-content'>
+          {renderedItems}
+          <Button className="orange-btn checkout">Checkout</Button>
+        </div>
       </div>
     </div>
   )
