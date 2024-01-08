@@ -121,7 +121,8 @@ button {
     flex-direction: column;
     justify-content: center;
     border: 1px solid blue;
-    width: 50%;
+    max-width: 100%;
+    max-height: 100%;
     z-index: 0;
 
     img {
@@ -141,7 +142,7 @@ button {
     .thumbnail-container {
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      max-width: 100%;
       margin-top: 1.5vw;
 
       img {
@@ -176,9 +177,10 @@ button {
       border: 1px solid green;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: flex-end;
       position: absolute;
-      width: 35%;
+      width: 500px;
       height:90vh;
       top: 50%;
       left: 50%;
@@ -193,8 +195,8 @@ button {
         justify-content: center;
 
         img {
-          width: 16%;
-          margin-inline: 3%;
+          width: 75px;
+          margin-inline: 10px;
         }
       }
 
@@ -215,12 +217,12 @@ button {
         
 
         &.previous {
-          top: 190px;
+          top: 43%;
           left: -25px;
         }
 
         &.next {
-          top: 190px;
+          top: 43%;
           right: -25px;
         }
       }
