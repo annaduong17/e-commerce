@@ -9,12 +9,13 @@ function CartItem({ id, name, price, imgUrl, discount, cartQuantity }) {
   
   return(
     <div className="cart-item">
-      <img className="cart-size" src={`/images/products/${imgUrl}`} alt="shoes" />
-      <div>
-        <p>{name}</p>
-        <p>{discountedPrice} x {cartQuantity} {discountedPrice * cartQuantity}</p>
+      <div className="cart-item--left">
+        <img className="cart-size" src={`/images/products/${imgUrl}`} alt="shoes" />
+        <div className="cart-item-details">
+          <p>{name}</p>
+          <p>${discountedPrice} x {cartQuantity} <span className='item-total'>${discountedPrice * cartQuantity}</span></p>
+        </div>
       </div>
-      <button>Edit</button>
       <button onClick={() => handleDeleteProduct(id)}>
         <img src="/images/icons/icon-delete.svg" alt="delete icon" />
       </button>

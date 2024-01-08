@@ -14,11 +14,6 @@ function Cart() {
       setShowButton(false);
     }
   }, [cart]);
-
-  const numOfItems = cart.reduce((acc, curr) => {
-    acc += curr.cartQuantity;
-    return acc;
-  }, 0)
   
   const renderedItems = cart.map((product) => {
     
@@ -29,10 +24,10 @@ function Cart() {
 
 
   return(
-    <div>
-      <h1>Cart {`(${numOfItems})`}</h1>
+    <div className='cart'>
+      <h1>Cart</h1>
       {renderedItems}
-      {showButton && <Button className="orange-btn">Checkout</Button>}
+      {showButton && <Button className="orange-btn checkout">Checkout</Button>}
     </div>
   )
 }

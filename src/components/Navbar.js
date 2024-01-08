@@ -40,7 +40,7 @@ function Navbar() {
           <li className='navlink'>
             <NavLink to="/cart">
               <span>{numOfItems}</span>
-              <img className='cart' src="/images/icons/icon-cart.svg" alt="cart icon" />
+              <img className='cart-icon' src="/images/icons/icon-cart.svg" alt="cart icon" />
             </NavLink>
           </li>
           <li className='navlink'>
