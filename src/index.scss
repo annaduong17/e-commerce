@@ -83,6 +83,23 @@ button {
       align-items: center;
     }
 
+    .navlink {
+      position: relative;
+
+      span {
+        position: absolute;
+        background-color: $orange;
+        color: white;
+        left: 20px; 
+        top: -7px;
+        width: 17px;
+        font-size: 9px;
+        border-radius: 40%;
+        text-align: center;
+        padding-block: 1px;
+      }
+    }
+
     .navlink * {
       text-decoration: none;
       margin-inline: 10px;

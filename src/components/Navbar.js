@@ -1,6 +1,15 @@
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import ShoesContext from '../context/shoes';
 
 function Navbar() {
+  const { cart } = useContext(ShoesContext);
+
+  const numOfItems = cart.reduce((acc, curr) => {
+    acc += curr.cartQuantity;
+    return acc;
+  }, 0)
+
   return(
     <nav className='navbar'>
       <div className='logo-container'>
@@ -30,6 +39,7 @@ function Navbar() {
         <div className='navlinks--right'>
           <li className='navlink'>
             <NavLink to="/cart">
+              <span>{numOfItems}</span>
               <img className='cart' src="/images/icons/icon-cart.svg" alt="cart icon" />
             </NavLink>
           </li>
