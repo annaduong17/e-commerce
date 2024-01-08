@@ -12,7 +12,9 @@ function Provider({ children }) {
   const [ showCart, setShowCart ] = useState(false);
 
   const handleCartClick = () => {
-    setShowCart(prev => !prev);
+    if (cart.length) {
+      setShowCart(prev => !prev);
+    }
   }
 
   const handleModal = (id) => {

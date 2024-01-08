@@ -41,7 +41,8 @@ button {
 
 .app {
   border: 1px solid red;
-  margin-inline: 200px;
+  margin-inline: 100px;
+  z-index: 1;
 }
 
 .navbar {
@@ -82,6 +83,11 @@ button {
 
     .navlinks--right {
       align-items: center;
+
+      button {
+        border: none;
+        background-color: transparent;
+      }
     }
 
     .navlink {
@@ -91,8 +97,8 @@ button {
         position: absolute;
         background-color: $orange;
         color: white;
-        left: 20px; 
-        top: -7px;
+        left: 30px; 
+        top: -5px;
         width: 17px;
         font-size: 9px;
         border-radius: 40%;
@@ -131,7 +137,7 @@ button {
   .product-container {
     border: 1px solid pink;
     display: flex;
-    margin: 2vw;
+    margin: 5vw;
   }
 
   .images {
@@ -347,13 +353,15 @@ button {
 .cart {
   position: absolute;
   top: 80px;
-  right: 200px;
+  right: 100px;
   border: 1px solid pink;
   width: 330px;
   font-size: 13px;
   color: $dark-gray-blue;
   letter-spacing: 0.45px;
-  z-index: 100;
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 0px 15px 30px -5px rgb(171, 171, 171);
 
   div:first-child {
     border-bottom: 1px solid $gray-blue;
@@ -368,6 +376,7 @@ button {
   .checkout {
     width: 290px;
     margin-inline: 20px;
+    margin-block: 10px 25px;
   }
 }
 
