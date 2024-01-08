@@ -178,7 +178,8 @@ button {
       flex-direction: column;
       align-items: flex-end;
       position: absolute;
-      width: 40%;
+      width: 35%;
+      height:90vh;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -186,6 +187,42 @@ button {
   
       .images {
         width: 100%;
+      }
+
+      .thumbnail-container {
+        justify-content: center;
+
+        img {
+          width: 16%;
+          margin-inline: 3%;
+        }
+      }
+
+      .close {
+        background: transparent;
+        border: none;
+        padding-bottom: 15px;
+      }
+
+      .arrow {
+        border-radius: 50%;
+        border: none;
+        position: absolute;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        
+
+        &.previous {
+          top: 190px;
+          left: -25px;
+        }
+
+        &.next {
+          top: 190px;
+          right: -25px;
+        }
       }
     }
   }
