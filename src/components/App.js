@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Products from './Products';
@@ -7,14 +8,16 @@ import About from './About';
 import Contact from './Contact';
 import Cart from './Cart';
 import UserProfile from './UserProfile';
+import ShoesContext from '../context/shoes';
 
 function App() {
-  
+  const { showCart } = useContext(ShoesContext);
 
   return(
     <BrowserRouter>
       <div className='app'>
         <Navbar />
+        {showCart && <Cart />}
 
         <Routes>
           <Route path='/' element={<Products />} />

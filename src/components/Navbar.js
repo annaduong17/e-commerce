@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import ShoesContext from '../context/shoes';
 
 function Navbar() {
-  const { cart } = useContext(ShoesContext);
+  const { cart, handleCartClick } = useContext(ShoesContext);
 
   const numOfItems = cart.reduce((acc, curr) => {
     acc += curr.cartQuantity;
@@ -38,10 +38,10 @@ function Navbar() {
         </div>
         <div className='navlinks--right'>
           <li className='navlink'>
-            <NavLink to="/cart">
+            <button onClick={handleCartClick}>
               <span>{numOfItems}</span>
               <img className='cart-icon' src="/images/icons/icon-cart.svg" alt="cart icon" />
-            </NavLink>
+            </button>
           </li>
           <li className='navlink'>
             <NavLink to="/profile">

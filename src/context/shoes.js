@@ -9,6 +9,11 @@ function Provider({ children }) {
   const [ cart, setCart ] = useState([]);
   const [ showModals, setShowModals ] = useState();
   const [ selectedIndex, setSelectedIndex ] = useState(0);
+  const [ showCart, setShowCart ] = useState(false);
+
+  const handleCartClick = () => {
+    setShowCart(prev => !prev);
+  }
 
   const handleModal = (id) => {
     setShowModals({...showModals, [id]: !showModals[id]});
@@ -73,7 +78,9 @@ function Provider({ children }) {
     setQuantities((prev) => ({
       ...prev,
       [id]: (prev[id] || 0) + quantities[id] || 1,
-    }));  
+    }));
+    
+    setShowCart(true);
   }
 
   const handleQuantityChange = (key, newQuantity) => {
@@ -114,6 +121,8 @@ function Provider({ children }) {
     selectedIndex,
     handleNext,
     handlePrevious,
+    handleCartClick,
+    showCart,
     discount: 50
   }
 

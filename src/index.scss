@@ -15,6 +15,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: 'Kumbh Sans', sans-serif;
+  position: relative;
 }
 
 button {
@@ -344,11 +345,15 @@ button {
 }
 
 .cart {
+  position: absolute;
+  top: 80px;
+  right: 200px;
   border: 1px solid pink;
   width: 330px;
   font-size: 13px;
   color: $dark-gray-blue;
   letter-spacing: 0.45px;
+  z-index: 100;
 
   div:first-child {
     border-bottom: 1px solid $gray-blue;
