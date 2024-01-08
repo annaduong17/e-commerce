@@ -4,14 +4,14 @@ import Button from './Button';
 import ShoesContext from '../context/shoes';
 
 function Cart() {
-  const [ showButton, setShowButton ] = useState(false);
+  const [ showItem, setShowItem ] = useState(false);
   const { cart, discount } = useContext(ShoesContext);
 
   useEffect(() => {
     if (cart.length) {
-      setShowButton(true);
+      setShowItem(true);
     } else {
-      setShowButton(false);
+      setShowItem(false);
     }
   }, [cart]);
   
@@ -28,9 +28,9 @@ function Cart() {
       <div>
         <h1>Cart</h1>
       </div>
-      <div>
+      <div className='cart-content'>
         {renderedItems}
-        {showButton && <Button className="orange-btn checkout">Checkout</Button>}
+        <Button className="orange-btn checkout">Checkout</Button>
       </div>
     </div>
   )

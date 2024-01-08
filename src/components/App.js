@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Products from './Products';
@@ -11,7 +11,17 @@ import UserProfile from './UserProfile';
 import ShoesContext from '../context/shoes';
 
 function App() {
-  const { showCart } = useContext(ShoesContext);
+  const { showCart, setShowCart } = useContext(ShoesContext);
+
+  useEffect(() => {
+    const hideCart = window.addEventListener('scroll',  () => {
+      setShowCart(false);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', hideCart);
+    }
+  })
 
   return(
     <BrowserRouter>
