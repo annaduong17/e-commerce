@@ -13,15 +13,17 @@ import ShoesContext from '../context/shoes';
 function App() {
   const { showCart, setShowCart } = useContext(ShoesContext);
 
-  // useEffect(() => {
-  //   const hideCart = window.addEventListener('scroll',  () => {
-  //     setShowCart(false);
-  //   });
+  console.log(showCart);
 
-  //   return () => {
-  //     window.removeEventListener('scroll', hideCart);
-  //   }
-  // })
+  useEffect(() => {
+    const hideCart = window.addEventListener('click',  (event) => {
+      setShowCart(false);
+    }, true);
+
+    return () => {
+      window.removeEventListener('click', hideCart);
+    }
+  })
 
   return(
     <BrowserRouter>
@@ -33,10 +35,10 @@ function App() {
           <Route path='/' element={<Products />} />
           <Route path='/men' element={<Men />} />
           <Route path='/women' element={<Women />} />
-          <Route path='about' element={<About />} />
-          <Route path='contact' element={<Contact />} />
-          <Route path='cart' element={<Cart />} />
-          <Route path='profile' element={<UserProfile />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/profile' element={<UserProfile />} />
         </Routes>
       </div>
     </BrowserRouter>

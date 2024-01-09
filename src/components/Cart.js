@@ -4,16 +4,7 @@ import Button from './Button';
 import ShoesContext from '../context/shoes';
 
 function Cart() {
-  const [ showItem, setShowItem ] = useState(false);
   const { cart, discount } = useContext(ShoesContext);
-
-  useEffect(() => {
-    if (cart.length) {
-      setShowItem(true);
-    } else {
-      setShowItem(false);
-    }
-  }, [cart]);
   
   const renderedItems = cart.map((product) => {
     
