@@ -16,7 +16,7 @@ function CartItem({ id, name, price, imgUrl, discount, cartQuantity }) {
           <p>${discountedPrice} x {cartQuantity} <span className='item-total'>${discountedPrice * cartQuantity}</span></p>
         </div>
       </div>
-      <button onClick={() => handleDeleteProduct(id)}>
+      <button className='delete-btn' onClick={() => handleDeleteProduct(id)}>
         <img src="/images/icons/icon-delete.svg" alt="delete icon" />
       </button>
     </div>

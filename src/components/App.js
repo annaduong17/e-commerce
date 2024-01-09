@@ -13,18 +13,23 @@ import ShoesContext from '../context/shoes';
 function App() {
   const { showCart, setShowCart } = useContext(ShoesContext);
 
-  console.log(showCart);
-
   useEffect(() => {
-    const hideCart = window.addEventListener('click',  (event) => {
-      setShowCart(false);
-    }, true);
-
+    const hideCart = (event) => {
+      const isCheckoutBtnClicked = event.target.classList.contains('checkout') || event.target.closest('.checkout');
+      const isDeleteButtonClicked = event.target.classList.contains('delete-btn') || event.target.closest('.delete-btn');
+  
+      if (!isCheckoutBtnClicked && !isDeleteButtonClicked) {
+        setShowCart(false);
+      }
+    };
+  
+    window.addEventListener('click', hideCart, true);
+  
     return () => {
-      window.removeEventListener('click', hideCart);
-    }
-  })
-
+      window.removeEventListener('click', hideCart, true);
+    };
+  }, [setShowCart]);
+  
   return(
     <BrowserRouter>
       <div className='app'>

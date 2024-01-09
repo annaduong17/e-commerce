@@ -11,9 +11,9 @@ function Provider({ children }) {
   const [ selectedIndex, setSelectedIndex ] = useState(0);
   const [ showCart, setShowCart ] = useState(false);
 
-  const handleCartClick = () => {
-      setShowCart(prev => !prev);
-  }
+  const handleCartHover = () => {
+    setShowCart(true);
+  };
 
   const handleModal = (id) => {
     setShowModals({...showModals, [id]: !showModals[id]});
@@ -121,7 +121,7 @@ function Provider({ children }) {
     selectedIndex,
     handleNext,
     handlePrevious,
-    handleCartClick,
+    handleCartHover,
     showCart,
     setShowCart,
     discount: 50
