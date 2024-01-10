@@ -31,14 +31,18 @@ function ProductDetails({ id, name, description, price, discount, imgUrls, handl
       <p className='brand'>SNEAKER COMPANY</p>
       <h1 className='name'>{name}</h1>
       <p className='description'>{description}</p>
-      <div className='price-discount-container'>
-        <span className='discounted-price'>{finalPrice(discountedPrice)}</span>
-        <span className='discount'>{discount}%</span>
-      </div>
-      <p className='price'>{finalPrice(price)}</p>
-      <div className='add-quantity-container'>
-        <ProductQuantity id={id} />
-        <Button id={id} onClick={() => handleAddProduct(id, name, price, imgUrls)} img={'/images/icons/icon-cart-white.svg'}className="orange-btn">Add to cart</Button>
+      <div className='price-container'>
+        <div className='pricing'>
+          <div className='price-discount-container'>
+            <span className='discounted-price'>${finalPrice(discountedPrice)}</span>
+            <span className='discount'>{discount}%</span>
+          </div>
+          <p className='price'>${finalPrice(price)}</p>
+        </div>
+        <div className='add-quantity-container'>
+          <ProductQuantity id={id} />
+          <Button id={id} onClick={() => handleAddProduct(id, name, price, imgUrls)} img={'/images/icons/icon-cart-white.svg'}className="orange-btn">Add to cart</Button>
+        </div>
       </div>
     </div>
   )

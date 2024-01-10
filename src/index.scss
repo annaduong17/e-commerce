@@ -40,13 +40,11 @@ button {
 }
 
 .app {
-  // border: 1px solid red;
   margin-inline: 100px;
   z-index: 1;
 }
 
 .navbar {
-  // border: 1px solid black;
   border-bottom: 1px solid $gray-blue;
   padding: 0;
   display: flex;
@@ -68,7 +66,6 @@ button {
   }
 
   .navlinks {
-    // border: 1px solid blue;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -80,7 +77,6 @@ button {
 
     .navlinks--left,
     .navlinks--right {
-      // border: 1px solid orange;
       display: flex;
     }
 
@@ -91,11 +87,25 @@ button {
 
     .navlinks--right {
       align-items: center;
+      text-align: end;
 
-      button {
-        border: none;
-        background-color: transparent;
+      .cart-icon-container {
+        margin: 0;
+
+        button {
+          border: none;
+          background-color: transparent;
+          margin: 0;
+          padding: 0;
+  
+          .cart-icon {
+            width: 20px;
+            margin: 0;
+          }
+        }
       }
+
+      
     }
 
     .navlink {
@@ -106,7 +116,7 @@ button {
         position: absolute;
         background-color: $orange;
         color: white;
-        left: 30px; 
+        left: 3px; 
         top: -5px;
         width: 17px;
         font-size: 9px;
@@ -126,11 +136,20 @@ button {
       width: 20px;
     }
 
+    .profile {
+      width: 90px;
+      margin: 0;
+
+      * {
+        margin: 0;
+      }
+    }
+
     .avatar {
       border-radius: 50%;
       padding: 0;
-      margin: 5px;
-      width: 40%;
+      margin: 0;
+      width: 45px;
       border: 2px solid transparent;
 
       &:hover {
@@ -141,10 +160,8 @@ button {
 }
 
 .products-container {
-  // border: 1px solid green;
 
   .product-container {
-    // border: 1px solid pink;
     display: flex;
     margin: 5vw;
   }
@@ -153,7 +170,6 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // border: 1px solid blue;
     width: 50%;
     max-width: 100%;
     max-height: 100%;
@@ -201,14 +217,14 @@ button {
   }
 
   .modal-container {
-    // border: 1px solid yellow;
+    border: 1px solid yellow;
     position: fixed;
     inset: 0;
     background-color: rgba(black, 80%);
     z-index: 100;
     
     .modal {
-      // border: 1px solid green;
+      border: 1px solid green;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -265,10 +281,10 @@ button {
   }
 
   .details {
-    width: 60%;
-    padding-block: 60px;
-    padding-inline: 100px 0;
-
+    width: 50%;
+    padding-block: 5%;
+    padding-left: 10%;
+  
     .brand {
       color: $orange;
       font-weight: 700;
@@ -439,6 +455,115 @@ button {
     padding: 0;
   }
 }
+
+
+
+
+@media (max-width: 1000px) {
+  .app {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .product-container {
+    width: 90%;
+    flex-direction: column;
+
+    .details {
+      width: 90%;
+      padding: 5%;
+
+      .brand {
+        font-size: 3vw;
+      }
+
+      .name {
+        font-size: 7vw;
+      }
+
+      .description {
+        font-size: 3.5vw;
+        line-height: 6vw;
+        letter-spacing: 0.06vw;
+      }
+
+      .price-container {
+        display: flex;
+        flex-direction: column;
+
+        .add-quantity-container {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          .quantity-container {
+            width: 100%;
+            height: 12vw;
+            margin-block: 2vw 3vw;
+            padding: 0;
+            border-radius: 1.75vw;
+
+            * {
+              font-size: 4vw;
+            }
+
+            .minus-btn {
+              display: flex;
+              justify-content: flex-start;
+              padding-left: 20px;
+            }
+            
+            .plus-btn {
+              justify-content: flex-end;
+              padding-right: 20px;
+            }
+
+            img {
+              width: 3vw;
+            }
+          }
+
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 12vw;
+            font-size: 4vw;
+            border-radius: 1.75vw;
+          }
+        }
+
+        .pricing {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+
+        .price-discount-container {
+          margin: 0;
+        }
+
+        .discounted-price {
+          font-size: 7vw;
+          
+        }
+
+        .discount {
+          font-size: 3.5vw;
+          margin-left: 4vw;
+        }
+
+        .price {
+          font-size: 4vw;
+        }
+      }
+    }
+  }
+}
+
 
 
 
