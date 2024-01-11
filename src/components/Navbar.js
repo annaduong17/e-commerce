@@ -28,19 +28,6 @@ function Navbar() {
             <NavLink to="/contact" className={({isActive}) => isActive ? "nav-active" : ""}>Contact</NavLink>
           </li>
         </div>
-        {/* <div className='navlinks--right'>
-          <li className='navlink cart-icon-container'>
-            <button onMouseEnter={handleCartHover}>
-              {numOfItems > 0 && <span>{numOfItems}</span>}
-              <img className='cart-icon' src="/images/icons/icon-cart.svg" alt="cart icon" />
-            </button>
-          </li>
-          <li className='navlink profile'>
-            <NavLink to="/profile">
-              <img className='avatar' src="/images/image-avatar.png"alt="avatar" />
-            </NavLink>
-          </li>
-        </div> */}
         <NavbarRight />
       </ul>
     </nav>

@@ -7,15 +7,7 @@ import Slider from './Slider';
 
 function Product({ id, name, price, description, gender, discount, imgUrls, handleAddProduct, className }) {
   
-  const { isMobile, updateImages, showModals, handleModal } = useContext(ShoesContext);
-
-  useEffect(() => {
-    window.addEventListener('resize', updateImages);
-
-    return () => {
-      window.removeEventListener('resize', updateImages);
-    };
-  });
+  const { isMobile, showModals, handleModal } = useContext(ShoesContext);
 
   return(
     <div className={className}>

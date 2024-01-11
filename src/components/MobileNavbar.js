@@ -14,10 +14,6 @@ function MobileNavbar() {
       </button>
         <img className='logo' src="/images/logo.svg" alt="logo" />
       </div>
-      {/* <div className='mobile-navbar--right'>
-        <img className='cart-icon' src="/images/icons/icon-cart.svg" alt="" />
-        <img className='avatar' src="/images/image-avatar.png" alt="" />
-      </div> */}
       <NavbarRight />
       {showDropdown && <Dropdown />}
     </div>

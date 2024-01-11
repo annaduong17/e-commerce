@@ -10,7 +10,7 @@ function Provider({ children }) {
   const [ showModals, setShowModals ] = useState();
   const [ selectedIndex, setSelectedIndex ] = useState(0);
   const [ showCart, setShowCart ] = useState(false);
-  const [ isMobile, setIsMobile ] = useState(false);
+  const [ isMobile, setIsMobile ] = useState(window.innerWidth < 700);
   const [ showDropdown, setShowDropdown ] = useState(false);
 
   const closeDropdown = () => {

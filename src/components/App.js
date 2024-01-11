@@ -12,7 +12,15 @@ import MobileNavbar from './MobileNavbar';
 import ShoesContext from '../context/shoes';
 
 function App() {
-  const { isMobile, showCart, setShowCart } = useContext(ShoesContext);
+  const { isMobile, updateImages, showCart, setShowCart } = useContext(ShoesContext);
+
+  useEffect(() => {
+    window.addEventListener('resize', updateImages);
+
+    return () => {
+      window.removeEventListener('resize', updateImages);
+    };
+  });
 
   useEffect(() => {
     const hideCart = (event) => {
