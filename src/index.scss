@@ -467,6 +467,51 @@ button {
 }
 
 @media (max-width: 700px) {
+  .mobile-navbar {
+    position: relative;
+
+    .dropdown-container {
+      width: 100%;
+    }
+
+    .dropdown {
+      position: fixed;
+      background-color: $white;
+      opacity: 100%;
+      top: 0;
+      width: 60%;
+      height: 100vh;
+      z-index: 2;
+      padding: 7vw;
+
+      button {
+        all: initial;
+        cursor: pointer;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+        width: 100%;
+        height: auto;
+
+        li {
+          margin-block: 5vw;
+          font-weight: bold;
+          font-size: 5vw;
+        }
+        
+        li * {
+          text-decoration: none;
+          color: $black;
+
+          &:hover {
+            color: $dark-gray-blue;
+          }
+        }
+      }
+    }
+  }
   .products-container .product-container {
     max-width: 100%;
     flex-direction: column;

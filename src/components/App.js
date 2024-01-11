@@ -8,10 +8,11 @@ import About from './About';
 import Contact from './Contact';
 import Cart from './Cart';
 import UserProfile from './UserProfile';
+import MobileNavbar from './MobileNavbar';
 import ShoesContext from '../context/shoes';
 
 function App() {
-  const { showCart, setShowCart } = useContext(ShoesContext);
+  const { isMobile, showCart, setShowCart } = useContext(ShoesContext);
 
   useEffect(() => {
     const hideCart = (event) => {
@@ -33,7 +34,7 @@ function App() {
   return(
     <BrowserRouter>
       <div className='app'>
-        <Navbar />
+        {isMobile ? <MobileNavbar /> : <Navbar />}
         {showCart && <Cart />}
 
         <Routes>

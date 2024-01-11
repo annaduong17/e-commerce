@@ -10,6 +10,20 @@ function Provider({ children }) {
   const [ showModals, setShowModals ] = useState();
   const [ selectedIndex, setSelectedIndex ] = useState(0);
   const [ showCart, setShowCart ] = useState(false);
+  const [ isMobile, setIsMobile ] = useState(false);
+  const [ showDropdown, setShowDropdown ] = useState(false);
+
+  const closeDropdown = () => {
+    setShowDropdown(false);
+  }
+
+  const toggleDropdown = () => {
+    setShowDropdown(prev => !prev);
+  }
+
+  const updateImages = () => {
+    setIsMobile(window.innerWidth < 700);
+   }
 
   const handleCartHover = () => {
     setShowCart(true);
@@ -124,6 +138,12 @@ function Provider({ children }) {
     handleCartHover,
     showCart,
     setShowCart,
+    isMobile,
+    setIsMobile,
+    updateImages,
+    toggleDropdown,
+    showDropdown,
+    closeDropdown,
     discount: 50
   }
 

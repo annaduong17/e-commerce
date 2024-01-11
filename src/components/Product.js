@@ -6,14 +6,9 @@ import ShoesContext from '../context/shoes';
 import Slider from './Slider';
 
 function Product({ id, name, price, description, gender, discount, imgUrls, handleAddProduct, className }) {
-  const [ isMobile, setIsMobile ] = useState(false);
+  
+  const { isMobile, updateImages, showModals, handleModal } = useContext(ShoesContext);
 
-  const { showModals, handleModal } = useContext(ShoesContext);
-
-  const updateImages = () => {
-    setIsMobile(window.innerWidth < 700);
-   }
-   
   useEffect(() => {
     window.addEventListener('resize', updateImages);
 
