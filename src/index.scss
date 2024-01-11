@@ -216,6 +216,53 @@ button {
     }
   }
 
+  .slider-container {
+    border: 1px solid blue;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
+
+    button {
+      position: absolute;
+      top: 45vw;
+      width: 9vw;
+      height: 9vw;
+      border: none;
+      border-radius: 50%;
+
+      &.previous {
+        left: 3vw;
+      }
+
+      &.next {
+        right: 3vw;
+      }
+
+      img {
+        width: 2vw;
+        height: 3vw;
+      }
+      
+    }
+
+    .slider {
+      border: 1px solid green;
+      display: flex;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+  
+      img {
+        border: 1px solid red;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  
+
   .modal-container {
     border: 1px solid yellow;
     position: fixed;
@@ -461,19 +508,22 @@ button {
 
 @media (max-width: 1000px) {
   .app {
-    width: 100%;
+    border: 1px solid red;
+    max-width: 100%;
     margin: 0;
   }
 }
 
 @media (max-width: 700px) {
-  .product-container {
-    width: 90%;
+  .products-container .product-container {
+    max-width: 100%;
     flex-direction: column;
+    margin-inline: 0;
 
     .details {
-      width: 90%;
-      padding: 5%;
+      width: 80%;
+      max-width: 100%;
+      padding: 10%;
 
       .brand {
         font-size: 3vw;
