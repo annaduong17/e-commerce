@@ -14,6 +14,14 @@ function Slider({ imgUrls, name}) {
     });
   }
 
+  const renderedItems = imgUrls.map((url) => {
+    return <img 
+              key={url} 
+              src={`/images/products/${url}`} 
+              alt={name} 
+              style={{ translate: `${-100 * index}%` }}/>
+  })
+
   return(
     <div className="slider-container">
       <button onClick={handlePrevious} className="previous">
@@ -23,7 +31,7 @@ function Slider({ imgUrls, name}) {
         <img src="/images/icons/icon-next.svg" alt="next-icon" />
       </button>
       <div className="slider">
-        <img key={index} src={`/images/products/${imgUrls[index]}`} alt={name} />
+        {renderedItems}
       </div>
     </div>
   )
