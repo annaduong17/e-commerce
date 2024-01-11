@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import ShoesContext from '../context/shoes';
 import Dropdown from './Dropdown';
+import NavbarRight from './NavbarRight';
 
 function MobileNavbar() {
   const { showDropdown, toggleDropdown } = useContext(ShoesContext);
@@ -13,10 +14,11 @@ function MobileNavbar() {
       </button>
         <img className='logo' src="/images/logo.svg" alt="logo" />
       </div>
-      <div className='mobile-navbar--right'>
+      {/* <div className='mobile-navbar--right'>
         <img className='cart-icon' src="/images/icons/icon-cart.svg" alt="" />
         <img className='avatar' src="/images/image-avatar.png" alt="" />
-      </div>
+      </div> */}
+      <NavbarRight />
       {showDropdown && <Dropdown />}
     </div>
   )

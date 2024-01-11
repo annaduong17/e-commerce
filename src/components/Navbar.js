@@ -1,15 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
-import ShoesContext from '../context/shoes';
+import NavbarRight from './NavbarRight';
 
 function Navbar() {
-  const { cart, handleCartHover } = useContext(ShoesContext);
-
-  const numOfItems = cart.reduce((acc, curr) => {
-    acc += curr.cartQuantity;
-    return acc;
-  }, 0)
-
   return(
     <nav className='navbar'>
       <div className='logo-container'>
@@ -36,7 +28,7 @@ function Navbar() {
             <NavLink to="/contact" className={({isActive}) => isActive ? "nav-active" : ""}>Contact</NavLink>
           </li>
         </div>
-        <div className='navlinks--right'>
+        {/* <div className='navlinks--right'>
           <li className='navlink cart-icon-container'>
             <button onMouseEnter={handleCartHover}>
               {numOfItems > 0 && <span>{numOfItems}</span>}
@@ -48,7 +40,8 @@ function Navbar() {
               <img className='avatar' src="/images/image-avatar.png"alt="avatar" />
             </NavLink>
           </li>
-        </div>
+        </div> */}
+        <NavbarRight />
       </ul>
     </nav>
   )

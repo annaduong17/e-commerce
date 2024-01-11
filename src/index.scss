@@ -64,20 +64,72 @@ button {
     width: 100%;
     
   }
+}
 
-  .navlinks {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    list-style: none;
+.navlinks {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  list-style: none;
+  margin: 0;
+  padding-left: 20px;
+
+  .navlink {
+    position: relative;
+    margin-right: 1vw;
+
+    span {
+      position: absolute;
+      background-color: $orange;
+      color: white;
+      left: 3px; 
+      top: -5px;
+      width: 17px;
+      font-size: 9px;
+      border-radius: 40%;
+      text-align: center;
+      padding-block: 1px;
+    }
+  }
+
+  .navlink * {
+    text-decoration: none;
+    margin-inline: 10px;
+    color: $dark-gray-blue;
+  }
+
+  .cart {
+    width: 20px;
+  }
+
+  .profile {
+    width: 90px;
     margin: 0;
-    padding-left: 20px;
 
-    .navlinks--left,
-    .navlinks--right {
+    * {
+      margin: 0;
+    }
+  }
+
+  .avatar {
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    width: 45px;
+    border: 2px solid transparent;
+
+    &:hover {
+      border-color: $orange;
+    }
+  }
+}
+
+  .navlinks--left,
+  .navlinks--right {
       display: flex;
+      justify-content: flex-end;
     }
 
     .navlinks--left .nav-active {
@@ -104,60 +156,8 @@ button {
           }
         }
       }
-
-      
     }
 
-    .navlink {
-      position: relative;
-      margin-right: 1vw;
-
-      span {
-        position: absolute;
-        background-color: $orange;
-        color: white;
-        left: 3px; 
-        top: -5px;
-        width: 17px;
-        font-size: 9px;
-        border-radius: 40%;
-        text-align: center;
-        padding-block: 1px;
-      }
-    }
-
-    .navlink * {
-      text-decoration: none;
-      margin-inline: 10px;
-      color: $dark-gray-blue;
-    }
-
-    .cart {
-      width: 20px;
-    }
-
-    .profile {
-      width: 90px;
-      margin: 0;
-
-      * {
-        margin: 0;
-      }
-    }
-
-    .avatar {
-      border-radius: 50%;
-      padding: 0;
-      margin: 0;
-      width: 45px;
-      border: 2px solid transparent;
-
-      &:hover {
-        border-color: $orange;
-      }
-    }
-  }
-}
 
 .products-container {
 
@@ -494,22 +494,6 @@ button {
         width: 40vw;
       }
     }
-
-    .mobile-navbar--right {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .cart-icon {
-      width: 5vw;
-      margin: 5vw;
-    }
-    
-    .avatar {
-      width: 10vw;
-    }
-      
 
     .dropdown-container {
       position: fixed;
