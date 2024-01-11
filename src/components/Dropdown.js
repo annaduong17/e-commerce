@@ -32,7 +32,6 @@ function Dropdown() {
           </li>
         </ul>
       </div>
-      <div className='shaded-area'></div>
     </div>
   )
 }

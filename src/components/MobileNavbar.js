@@ -11,11 +11,11 @@ function MobileNavbar() {
       <button onClick={toggleDropdown}>
         <img src="/images/icons/icon-menu.svg" alt="dropdown menu icon" />
       </button>
-        <img src="/images/logo.svg" alt="logo" />
+        <img className='logo' src="/images/logo.svg" alt="logo" />
       </div>
       <div className='mobile-navbar--right'>
-        <img src="/images/icons/icon-cart.svg" alt="" />
-        <img src="/images/image-avatar.png" alt="" />
+        <img className='cart-icon' src="/images/icons/icon-cart.svg" alt="" />
+        <img className='avatar' src="/images/image-avatar.png" alt="" />
       </div>
       {showDropdown && <Dropdown />}
     </div>

@@ -469,19 +469,64 @@ button {
 @media (max-width: 700px) {
   .mobile-navbar {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+
+    .mobile-navbar--left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        all: initial;
+        cursor: pointer;
+        padding: 5vw;
+  
+        img {
+          width: 5vw;
+        }
+      }
+
+      img {
+        width: 40vw;
+      }
+    }
+
+    .mobile-navbar--right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cart-icon {
+      width: 5vw;
+      margin: 5vw;
+    }
+    
+    .avatar {
+      width: 10vw;
+    }
+      
 
     .dropdown-container {
+      position: fixed;
       width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 5;
     }
 
     .dropdown {
-      position: fixed;
+      position: absolute;
       background-color: $white;
       opacity: 100%;
       top: 0;
+      left: 0;
       width: 60%;
       height: 100vh;
-      z-index: 2;
       padding: 7vw;
 
       button {
